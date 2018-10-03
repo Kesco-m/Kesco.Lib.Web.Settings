@@ -388,6 +388,7 @@ namespace Kesco.Lib.Web.Settings
         public static string person_juridical_v4;
         public static string person_contact_form_v4;
         public static string person_link_form_v4;
+
         /// <summary>
         /// статический конструктор, в котором инициализируются все переменные
         /// </summary>
@@ -427,8 +428,8 @@ namespace Kesco.Lib.Web.Settings
             DS_Buh = CN_Value(DS, "DS_Buh");
             DS_accounting_phone = CN_Value(DS, "DS_accounting_phone");
 
-            territory_search = ConfigurationManager.AppSettings["URI_territory_search"];
-            territory_form = ConfigurationManager.AppSettings["URI_territory_form"];
+            territory_search = ConfigurationManager.AppSettings["URI_area_search"];
+            territory_form = ConfigurationManager.AppSettings["URI_area_form"];
             person_search = ConfigurationManager.AppSettings["URI_person_search"];
             person_form = ConfigurationManager.AppSettings["URI_person_form"];
             person_types_search = ConfigurationManager.AppSettings["URI_theme_search"];
@@ -455,8 +456,7 @@ namespace Kesco.Lib.Web.Settings
             user_srv = ConfigurationManager.AppSettings["URI_user_srv"];
             user_extFields = ConfigurationManager.AppSettings["URI_user_extFields"];
             user_workplace = ConfigurationManager.AppSettings["URI_user_workplace"];
-            user_filling = ConfigurationManager.AppSettings["URI_user_filling"]; 
-
+            user_filling = ConfigurationManager.AppSettings["URI_user_filling"];
 
             resource_search = ConfigurationManager.AppSettings["URI_resource_search"];
             resource_form = ConfigurationManager.AppSettings["URI_resource_form"];
