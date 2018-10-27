@@ -8,6 +8,9 @@ using Kesco.Lib.DALC;
 
 namespace Kesco.Lib.Web.Settings.Parameters
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AppParamsManager
     {
         /// <summary>
@@ -28,6 +31,9 @@ namespace Kesco.Lib.Web.Settings.Parameters
         /// Клиент ID
         /// </summary>
         private int _clid;
+        /// <summary>
+        /// 
+        /// </summary>
         public int CLID
         {
             get { return _clid; }

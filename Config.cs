@@ -277,6 +277,11 @@ namespace Kesco.Lib.Web.Settings
         public static string area_search;
 
         /// <summary>
+        /// HTTP-адрес формы территори
+        /// </summary>
+        public static string area_form;
+
+        /// <summary>
         /// HTTP-адрес web-сервиса, который возвращает информацию территориям
         /// </summary>
         public static string area_srv;
@@ -285,6 +290,8 @@ namespace Kesco.Lib.Web.Settings
         /// HTTP-адрес формы редактирования оборудования
         /// </summary>
         public static string equipment_form;
+
+        
 
         /// <summary>
         /// Текущий домен приложения
@@ -383,10 +390,25 @@ namespace Kesco.Lib.Web.Settings
         public static string contacts_caller;
         
         //v4 persons
+        /// <summary>
+        /// 
+        /// </summary>
         public static string person_requsites_v4;
+        /// <summary>
+        /// 
+        /// </summary>
         public static string person_natural_v4;
+        /// <summary>
+        /// 
+        /// </summary>
         public static string person_juridical_v4;
+        /// <summary>
+        /// 
+        /// </summary>
         public static string person_contact_form_v4;
+        /// <summary>
+        /// 
+        /// </summary>
         public static string person_link_form_v4;
 
         /// <summary>
