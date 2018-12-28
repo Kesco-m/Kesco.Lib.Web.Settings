@@ -421,6 +421,9 @@ namespace Kesco.Lib.Web.Settings
             //person_juridical_v4 = ConfigurationManager.AppSettings["URI_person_juridical_v4"];
             //person_contact_form_v4 = ConfigurationManager.AppSettings["URI_person_contact_form_v4"];
             //person_link_form_v4 = ConfigurationManager.AppSettings["URI_person_link_form_v4"];
+
+            person_contact_form_v4 = ConfigurationManager.AppSettings["URI_person_contact"];
+
             bproject_search = ConfigurationManager.AppSettings["URI_bproject_search"];
 
             domain = ConfigurationManager.AppSettings["Domain"];
