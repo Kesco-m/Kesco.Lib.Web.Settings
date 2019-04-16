@@ -11,6 +11,10 @@ namespace Kesco.Lib.Web.Settings
     public class Config
     {
         /// <summary>
+        /// Получает текущую версию скриптов из web.config
+        /// </summary>
+        public static string versionV4js;
+        /// <summary>
         /// Индентификатор русской культуры приложения
         /// </summary>
         public const string langRu = "ru";
@@ -91,6 +95,11 @@ namespace Kesco.Lib.Web.Settings
         public static string DS_person;
 
         /// <summary>
+        /// Строка подключения к БД ЗаявкиIT
+        /// </summary>
+        public static string DS_errors;
+
+        /// <summary>
         /// Строка подключения к БД Документы, использовать для получения информации по документам
         /// </summary>
         public static string DS_document;
@@ -114,6 +123,11 @@ namespace Kesco.Lib.Web.Settings
         /// Строка подключения к БД Тарификация, использовать для получения информации по тарификации мобильной и стационарной связи
         /// </summary>
         public static string DS_accounting_phone;
+
+        /// <summary>
+        /// Строка подключения к БД Автоподстановка
+        /// </summary>
+        public static string DS_autochange;
 
         /// <summary>
         /// HTTP-адрес формы поиска лиц
@@ -265,6 +279,16 @@ namespace Kesco.Lib.Web.Settings
         /// HTTP-адрес формы редактирования статьи движения денежных средств
         /// </summary>
         public static string cash_flow_item_form;
+
+        /// <summary>
+        /// HTTP-адрес формы поиска видов движения денежных средств
+        /// </summary>
+        public static string cash_flow_type_search;
+
+        /// <summary>
+        /// HTTP-адрес формы редактирования видов движения денежных средств
+        /// </summary>
+        public static string cash_flow_type_form;
 
         /// <summary>
         /// HTTP-адрес web-сервиса, который возвращает информацию по статьям движения денежных средств
@@ -422,6 +446,10 @@ namespace Kesco.Lib.Web.Settings
             //person_contact_form_v4 = ConfigurationManager.AppSettings["URI_person_contact_form_v4"];
             //person_link_form_v4 = ConfigurationManager.AppSettings["URI_person_link_form_v4"];
 
+            versionV4js = (ConfigurationManager.AppSettings["Version_V4_JS"] ?? "").Length > 0
+                ? "/" + ConfigurationManager.AppSettings["Version_V4_JS"]
+                : "";
+
             person_contact_form_v4 = ConfigurationManager.AppSettings["URI_person_contact"];
 
             bproject_search = ConfigurationManager.AppSettings["URI_bproject_search"];
@@ -452,6 +480,8 @@ namespace Kesco.Lib.Web.Settings
             DS_resource = CN_Value(DS, "DS_resource");
             DS_Buh = CN_Value(DS, "DS_Buh");
             DS_accounting_phone = CN_Value(DS, "DS_accounting_phone");
+            DS_errors = CN_Value(DS, "DS_errors");
+            DS_autochange = CN_Value(DS, "DS_autochange");
 
             territory_search = ConfigurationManager.AppSettings["URI_area_search"];
             territory_form = ConfigurationManager.AppSettings["URI_area_form"];
@@ -473,6 +503,8 @@ namespace Kesco.Lib.Web.Settings
             cash_flow_item_form = ConfigurationManager.AppSettings["URI_cashflowitem_form"];
             cash_flow_item_srv = ConfigurationManager.AppSettings["URI_cashflowitem_srv"];
 
+            cash_flow_type_search = ConfigurationManager.AppSettings["URI_cashflowtype_search"];
+            cash_flow_type_form = ConfigurationManager.AppSettings["URI_cashflowtype_form"];
 
             user_photo = ConfigurationManager.AppSettings["URI_user_photo"];
             user_photos = ConfigurationManager.AppSettings["URI_user_photos"];

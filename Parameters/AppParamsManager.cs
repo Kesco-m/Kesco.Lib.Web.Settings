@@ -115,5 +115,76 @@ namespace Kesco.Lib.Web.Settings.Parameters
                 }
             }
         }
+
+        /// <summary>
+        /// Метод получает значение параметра из строки запроса или БД сохраненных параметров
+        /// </summary>
+        /// <param name="requestQuery">Коллекция переменных строки запроса HTTP</param>
+        /// <param name="name">Имя параметра</param>
+        /// <param name="isRequired">Возращаемый флаг, указывающий, что применение этого параметра обязательно</param>
+        /// <param name="defstr">Значение по умолчанию для параметра</param>
+        /// <returns>Значение параметра</returns>
+        public string GetParameterValue(NameValueCollection requestQuery, string name, out bool isRequired, string defstr)
+        {
+            string value = requestQuery[name];
+            isRequired = !string.IsNullOrEmpty(value);
+            if (isRequired)
+                return value;
+
+            value = GetDbParameterValue(name);
+
+            if (null == value)
+            {
+                value = requestQuery["_" + name];
+
+                if (null == value)
+                    return defstr;
+            }
+
+            return value;
+        }
+
+        /// <summary>
+        /// Получение последнего значения параметра из БД сохраненных параметров пользователей
+        /// </summary>
+        /// <param name="name">Имя параметра</param>
+        /// <returns>Значение параметра</returns>
+        public string GetDbParameterValue(string name)
+        {
+            AppParameter appParam = this.Params.Find(p => p.Name == name);
+            if (null == appParam)
+                return null;
+            return appParam.Value;
+        }
+
+        /// <summary>
+        /// Установка значения параметра (без сохранения в БД)
+        /// </summary>
+        /// <param name="name">Имя параметра</param>
+        /// <param name="value">Значение параметра</param>
+        public void SetDbParameterValue(string name, string value)
+        {
+            SetDbParameterValue(name, value, false);
+        }
+
+
+        /// <summary>
+        /// Установка значения параметра в БД
+        /// </summary>
+        /// <param name="name">Имя параметра</param>
+        /// <param name="value">Значение параметра</param>
+        /// <param name="withSave">Признак необходимости сохранения в БД</param>
+        public void SetDbParameterValue(string name, string value, bool withSave)
+        {
+            AppParameter appParam = this.Params.Find(p => p.Name == name);
+
+            if (null == appParam)
+                return;
+
+            appParam.Value = value;
+
+            if (withSave)
+                SaveParams();
+        }
     }
 }
