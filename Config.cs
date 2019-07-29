@@ -4,439 +4,439 @@ using System.Configuration;
 using System.Globalization;
 
 namespace Kesco.Lib.Web.Settings
-{   
+{
     /// <summary>
-    /// Класс получения настроек web-приложения
+    ///     Класс получения настроек web-приложения
     /// </summary>
     public class Config
     {
         /// <summary>
-        /// Получает текущую версию скриптов из web.config
-        /// </summary>
-        public static string versionV4js;
-        /// <summary>
-        /// Индентификатор русской культуры приложения
+        ///     Индентификатор русской культуры приложения
         /// </summary>
         public const string langRu = "ru";
 
         /// <summary>
-        /// Индентификатор английской культуры приложения
+        ///     Индентификатор английской культуры приложения
         /// </summary>
         public const string langEn = "en";
 
         /// <summary>
-        /// SMTP-сервер, через который отправляет сообщения об исключительных ситуациях Kesco.Lib.Log
+        ///     Получает текущую версию скриптов из web.config
+        /// </summary>
+        public static string versionV4js;
+
+        /// <summary>
+        ///     SMTP-сервер, через который отправляет сообщения об исключительных ситуациях Kesco.Lib.Log
         /// </summary>
         public static string smtpServer;
 
         /// <summary>
-        /// Почтовый ящик службы поддержки, в который попадают сообщения, отправляемые Kesco.Lib.Log
+        ///     Почтовый ящик службы поддержки, в который попадают сообщения, отправляемые Kesco.Lib.Log
         /// </summary>
         public static string email_Support;
 
         /// <summary>
-        /// Название текущего приложения
+        ///     Название текущего приложения
         /// </summary>
         public static string appName;
 
         /// <summary>
-        /// Адрес сервера отчетов Reporting Service
+        ///     Адрес сервера отчетов Reporting Service
         /// </summary>
         public static string uri_Report;
 
         /// <summary>
-        /// Дата перехода на новые названия инкотермс в таможенном классификаторе
+        ///     Дата перехода на новые названия инкотермс в таможенном классификаторе
         /// </summary>
         public static DateTime incoterms_date = DateTime.MaxValue;
 
         /// <summary>
-        /// Текущая версия 1С бухгалтерии
+        ///     Текущая версия 1С бухгалтерии
         /// </summary>
         public static string version_1s_buh;
 
         /// <summary>
-        /// HTTP-адрес отчета "Акт сверки"
+        ///     HTTP-адрес отчета "Акт сверки"
         /// </summary>
         public static string rpt_tradeSverka;
 
         /// <summary>
-        /// HTTP-адрес отчета "Реестр отгруженных вагонов"
+        ///     HTTP-адрес отчета "Реестр отгруженных вагонов"
         /// </summary>
         public static string rpt_rwreestr;
 
         /// <summary>
-        /// HTTP-адрес отчета "Сводка по отправленным вагонам"
+        ///     HTTP-адрес отчета "Сводка по отправленным вагонам"
         /// </summary>
         public static string rpt_deliverySvodka;
 
         /// <summary>
-        /// HTTP-адрес отчета "Отчет агента"
+        ///     HTTP-адрес отчета "Отчет агента"
         /// </summary>
         public static string rpt_tradeSverkaAgent;
 
         /// <summary>
-        /// HTTP-адрес отчета "Оборотная ведомость"
+        ///     HTTP-адрес отчета "Оборотная ведомость"
         /// </summary>
         public static string rpt_tradeOborotka;
 
         /// <summary>
-        /// HTTP-адрес отчета "Оборотная ведомость с детализацией"
+        ///     HTTP-адрес отчета "Оборотная ведомость с детализацией"
         /// </summary>
         public static string rpt_tradeOborotkaDetail;
 
         /// <summary>
-        /// HTTP-адрес web-сервиса сервера отчетов
+        ///     HTTP-адрес web-сервиса сервера отчетов
         /// </summary>
         public static string report_srv;
 
         /// <summary>
-        /// Строка подключения к БД Справочники, использовать для получения информации по лицам
+        ///     Строка подключения к БД Справочники, использовать для получения информации по лицам
         /// </summary>
         public static string DS_person;
 
         /// <summary>
-        /// Строка подключения к БД ЗаявкиIT
+        ///     Строка подключения к БД ЗаявкиIT
         /// </summary>
         public static string DS_errors;
 
         /// <summary>
-        /// Строка подключения к БД Документы, использовать для получения информации по документам
+        ///     Строка подключения к БД Документы, использовать для получения информации по документам
         /// </summary>
         public static string DS_document;
 
         /// <summary>
-        /// Строка подключения к БД Инвентаризация, использовать для получения по всем сущностям Corporate
+        ///     Строка подключения к БД Инвентаризация, использовать для получения по всем сущностям Corporate
         /// </summary>
         public static string DS_user;
 
         /// <summary>
-        /// Строка подключения к БД Справочники, использовать для получения информации по ресурсам
+        ///     Строка подключения к БД Справочники, использовать для получения информации по ресурсам
         /// </summary>
         public static string DS_resource;
 
         /// <summary>
-        /// Строка подключения к БД Бухгалтерия, использовать для получения информации с объектами бухгалтерий 1С
+        ///     Строка подключения к БД Бухгалтерия, использовать для получения информации с объектами бухгалтерий 1С
         /// </summary>
         public static string DS_Buh;
 
         /// <summary>
-        /// Строка подключения к БД Тарификация, использовать для получения информации по тарификации мобильной и стационарной связи
+        ///     Строка подключения к БД Тарификация, использовать для получения информации по тарификации мобильной и стационарной
+        ///     связи
         /// </summary>
         public static string DS_accounting_phone;
 
         /// <summary>
-        /// Строка подключения к БД Автоподстановка
-        /// </summary>
-        public static string DS_autochange;
-
-        /// <summary>
-        /// HTTP-адрес формы поиска лиц
+        ///     HTTP-адрес формы поиска лиц
         /// </summary>
         public static string person_search;
 
         /// <summary>
-        /// HTTP-адрес формы досье лиц
+        ///     HTTP-адрес формы досье лиц
         /// </summary>
         public static string person_form;
 
         /// <summary>
-        /// HTTP-адрес формы роли
+        ///     HTTP-адрес формы роли
         /// </summary>
         public static string role_form;
 
         /// <summary>
-        /// HTTP-адрес формы выбора роли
+        ///     HTTP-адрес формы выбора роли
         /// </summary>
         public static string roles_search;
 
         /// <summary>
-        /// HTTP-адрес формы выбора типов
+        ///     HTTP-адрес формы выбора типов
         /// </summary>
         public static string person_types_search;
 
         /// <summary>
-        /// HTTP-адрес web-сервиса, который возвращает информацию по лицам
+        ///     HTTP-адрес web-сервиса, который возвращает информацию по лицам
         /// </summary>
         public static string person_srv;
 
         /// <summary>
-        /// HTTP-адрес формы создания юридического лица
+        ///     HTTP-адрес формы создания юридического лица
         /// </summary>
         public static string person_jp_add;
 
         /// <summary>
-        /// HTTP-адрес формы создания физического лица
+        ///     HTTP-адрес формы создания физического лица
         /// </summary>
         public static string person_np_add;
 
         /// <summary>
-        /// HTTP-адрес формы поиска складов
+        ///     HTTP-адрес формы поиска складов
         /// </summary>
         public static string store_search;
 
         /// <summary>
-        /// HTTP-адрес формы поиска складов
+        ///     HTTP-адрес формы поиска складов
         /// </summary>
         public static string v4person_themes;
 
         /// <summary>
-        /// HTTP-адрес формы редактирования склада
+        ///     HTTP-адрес формы редактирования склада
         /// </summary>
         public static string store_form;
 
         /// <summary>
-        /// HTTP-адрес отчетов по складам
+        ///     HTTP-адрес отчетов по складам
         /// </summary>
         public static string store_report;
-        
+
 
         /// <summary>
-        /// HTTP-адрес web-сервиса, который возвращает информацию по складам
+        ///     HTTP-адрес web-сервиса, который возвращает информацию по складам
         /// </summary>
         public static string store_srv;
 
         /// <summary>
-        /// HTTP-адрес web-сервиса, который экспортирует данные в 1С
+        ///     HTTP-адрес web-сервиса, который экспортирует данные в 1С
         /// </summary>
         public static string store_export1s;
 
         /// <summary>
-        /// HTTP-адрес формы c фотографиями сотрудника
+        ///     HTTP-адрес формы c фотографиями сотрудника
         /// </summary>
         public static string user_extFields;
 
         /// <summary>
-        /// HTTP-адрес формы c фотографиями сотрудника
+        ///     HTTP-адрес формы c фотографиями сотрудника
         /// </summary>
         public static string user_photo;
 
         /// <summary>
-        /// HTTP-адрес формы c фотографиями сотрудника
+        ///     HTTP-адрес формы c фотографиями сотрудника
         /// </summary>
         public static string user_photos;
 
         /// <summary>
-        /// HTTP-адрес формы поиска сотрудников
+        ///     HTTP-адрес формы поиска сотрудников
         /// </summary>
         public static string user_search;
 
         /// <summary>
-        /// HTTP-адрес формы c информацией о сотруднике
+        ///     HTTP-адрес формы c информацией о сотруднике
         /// </summary>
         public static string user_form;
 
         /// <summary>
-        /// HTTP-адрес формы замещения сотрудника
+        ///     HTTP-адрес формы замещения сотрудника
         /// </summary>
         public static string user_filling;
 
         /// <summary>
-        /// HTTP-адрес формы c информацией о сотруднике
+        ///     HTTP-адрес формы c информацией о сотруднике
         /// </summary>
         public static string user_workplace;
-        
+
         /// <summary>
-        /// HTTP-адрес web-сервиса, который Возвращает информацию по сотрудникам
+        ///     HTTP-адрес web-сервиса, который Возвращает информацию по сотрудникам
         /// </summary>
         public static string user_srv;
 
         /// <summary>
-        /// HTTP-адрес формы поиска ресурсов
+        ///     HTTP-адрес формы поиска ресурсов
         /// </summary>
         public static string resource_search;
 
         /// <summary>
-        /// HTTP-адрес формы поиска мест хранения
+        ///     HTTP-адрес формы поиска мест хранения
         /// </summary>
         public static string residences_search;
 
         /// <summary>
-        /// HTTP-адрес формы редактирования/создания ресурса
+        ///     HTTP-адрес формы редактирования/создания ресурса
         /// </summary>
         public static string resource_form;
 
         /// <summary>
-        /// HTTP-адрес web-сервиса, который возвращает информацию по ресурсам
+        ///     HTTP-адрес web-сервиса, который возвращает информацию по ресурсам
         /// </summary>
         public static string resource_srv;
 
         /// <summary>
-        /// HTTP-адрес формы поиска бизнес-проектов
+        ///     HTTP-адрес формы поиска бизнес-проектов
         /// </summary>
         public static string business_project_search;
 
         /// <summary>
-        /// HTTP-адрес web-сервиса, который возвращает информацию по бизнес-проектам
+        ///     HTTP-адрес web-сервиса, который возвращает информацию по бизнес-проектам
         /// </summary>
         public static string bproject_srv;
 
         /// <summary>
-        /// HTTP-адрес формы поиска статей движения денежных средств
+        ///     HTTP-адрес формы поиска статей движения денежных средств
         /// </summary>
         public static string cash_flow_item_search;
 
         /// <summary>
-        /// HTTP-адрес формы редактирования статьи движения денежных средств
+        ///     HTTP-адрес формы редактирования статьи движения денежных средств
         /// </summary>
         public static string cash_flow_item_form;
 
         /// <summary>
-        /// HTTP-адрес формы поиска видов движения денежных средств
+        ///     HTTP-адрес формы поиска видов движения денежных средств
         /// </summary>
         public static string cash_flow_type_search;
 
         /// <summary>
-        /// HTTP-адрес формы редактирования видов движения денежных средств
+        ///     HTTP-адрес формы редактирования видов движения денежных средств
         /// </summary>
         public static string cash_flow_type_form;
 
         /// <summary>
-        /// HTTP-адрес web-сервиса, который возвращает информацию по статьям движения денежных средств
+        ///     HTTP-адрес web-сервиса, который возвращает информацию по статьям движения денежных средств
         /// </summary>
         public static string cash_flow_item_srv;
 
         /// <summary>
-        /// HTTP-адрес формы поиска территорий
+        ///     HTTP-адрес формы поиска территорий
         /// </summary>
         public static string area_search;
 
         /// <summary>
-        /// HTTP-адрес формы территори
+        ///     HTTP-адрес формы территори
         /// </summary>
         public static string area_form;
 
         /// <summary>
-        /// HTTP-адрес web-сервиса, который возвращает информацию территориям
+        ///     HTTP-адрес web-сервиса, который возвращает информацию территориям
         /// </summary>
         public static string area_srv;
 
         /// <summary>
-        /// HTTP-адрес формы редактирования оборудования
+        ///     HTTP-адрес формы редактирования оборудования
         /// </summary>
         public static string equipment_form;
 
-        
 
         /// <summary>
-        /// Текущий домен приложения
+        ///     Текущий домен приложения
         /// </summary>
         public static string domain;
 
         /// <summary>
-        /// HTTP-адрес формы поиска отправок вагонов
+        ///     HTTP-адрес формы поиска отправок вагонов
         /// </summary>
         public static string delivery_search;
 
         /// <summary>
-        /// HTTP-адрес формы редактирования/создания отправки вагона
+        ///     HTTP-адрес формы редактирования/создания отправки вагона
         /// </summary>
         public static string delivery_form;
 
         /// <summary>
-        /// HTTP-адрес формы поиска розеток
+        ///     HTTP-адрес старой версии
+        /// </summary>
+        public static string direction_OldVersion;
+
+        /// <summary>
+        ///     HTTP-адрес формы поиска розеток
         /// </summary>
         public static string socket_search;
 
         /// <summary>
-        /// HTTP-адрес формы редактирования/создания розетки
+        ///     HTTP-адрес формы редактирования/создания розетки
         /// </summary>
         public static string socket_form;
 
         /// <summary>
-        /// HTTP-адрес формы поиска телефонного номера
+        ///     HTTP-адрес формы поиска телефонного номера
         /// </summary>
         public static string tel_search;
 
         /// <summary>
-        /// HTTP-адрес формы редактирования/создания телефонного номера
+        ///     HTTP-адрес формы редактирования/создания телефонного номера
         /// </summary>
         public static string tel_form;
 
         /// <summary>
-        /// HTTP-адрес формы поиска расположений
+        ///     HTTP-адрес формы поиска расположений
         /// </summary>
         public static string location_search;
 
         /// <summary>
-        /// HTTP-адрес формы поиска моделей оборудования
+        ///     HTTP-адрес формы поиска моделей оборудования
         /// </summary>
         public static string model_search;
 
         /// <summary>
-        /// HTTP-адрес формы поиска территории
+        ///     HTTP-адрес формы поиска территории
         /// </summary>
         public static string territory_search;
 
         /// <summary>
-        /// HTTP-адрес формы поиска бизнес проекта
+        ///     HTTP-адрес формы поиска бизнес проекта
         /// </summary>
         public static string bproject_search;
-        
+
 
         /// <summary>
-        /// HTTP-адрес формы редактирования/создания территории
+        ///     HTTP-адрес формы редактирования/создания территории
         /// </summary>
         public static string territory_form;
 
         /// <summary>
-        /// HTTP-адрес формы редактирования/создания модели оборудования
+        ///     HTTP-адрес формы редактирования/создания модели оборудования
         /// </summary>
         public static string model_form;
 
         /// <summary>
-        /// HTTP-адрес папки с корпоративными стилями
+        ///     HTTP-адрес папки с корпоративными стилями
         /// </summary>
         public static string styles;
 
         /// <summary>
-        /// HTTP-адрес формы поиска статей бюджета
+        ///     HTTP-адрес формы поиска статей бюджета
         /// </summary>
         public static string budgetline_search;
 
         /// <summary>
-        /// HTTP-адрес формы редактирования статей бюджета
+        ///     HTTP-адрес формы редактирования статей бюджета
         /// </summary>
         public static string budgetline_form;
 
         /// <summary>
-        /// HTTP-адрес web-сервиса сохранения настроей приоложений
+        ///     HTTP-адрес web-сервиса сохранения настроей приоложений
         /// </summary>
         public static string setting_srv;
 
         /// <summary>
-        /// HTTP-адрес приложения контакты
+        ///     HTTP-адрес приложения контакты
         /// </summary>
         public static string contacts;
 
         /// <summary>
-        /// HTTP-адрес web звонилки
+        ///     HTTP-адрес web звонилки
         /// </summary>
         public static string contacts_caller;
-        
+
         //v4 persons
         /// <summary>
-        /// 
         /// </summary>
         public static string person_requsites_v4;
+
         /// <summary>
-        /// 
         /// </summary>
         public static string person_natural_v4;
+
         /// <summary>
-        /// 
         /// </summary>
         public static string person_juridical_v4;
+
         /// <summary>
-        /// 
         /// </summary>
         public static string person_contact_form_v4;
+
         /// <summary>
-        /// 
         /// </summary>
         public static string person_link_form_v4;
 
         /// <summary>
-        /// статический конструктор, в котором инициализируются все переменные
+        ///     статический конструктор, в котором инициализируются все переменные
         /// </summary>
         static Config()
         {
@@ -459,7 +459,8 @@ namespace Kesco.Lib.Web.Settings
             version_1s_buh = ConfigurationManager.AppSettings["Version_1S_Buh"];
 
             contacts = ConfigurationManager.AppSettings["URI_contacts"];
-            contacts_caller = ConfigurationManager.AppSettings["URI_contacts_caller"]; ;
+            contacts_caller = ConfigurationManager.AppSettings["URI_contacts_caller"];
+            ;
 
             email_Support = ConfigurationManager.AppSettings["Email_Support"];
             smtpServer = ConfigurationManager.AppSettings["SmtpServer"];
@@ -470,9 +471,9 @@ namespace Kesco.Lib.Web.Settings
             // Сделано на время - пока параметр не будет добавлен в глобальный web.config
             if (ConfigKeyExists("incoterms_date"))
                 incoterms_date = DateTime.ParseExact(ConfigurationManager.AppSettings["incoterms_date"], "yyyy.MM.dd",
-                                                     CultureInfo.InvariantCulture);
+                    CultureInfo.InvariantCulture);
 
-            ConnectionStringSettingsCollection DS = ConfigurationManager.ConnectionStrings;
+            var DS = ConfigurationManager.ConnectionStrings;
 
             DS_person = CN_Value(DS, "DS_person");
             DS_document = CN_Value(DS, "DS_doc");
@@ -481,7 +482,6 @@ namespace Kesco.Lib.Web.Settings
             DS_Buh = CN_Value(DS, "DS_Buh");
             DS_accounting_phone = CN_Value(DS, "DS_accounting_phone");
             DS_errors = CN_Value(DS, "DS_errors");
-            DS_autochange = CN_Value(DS, "DS_autochange");
 
             territory_search = ConfigurationManager.AppSettings["URI_area_search"];
             territory_form = ConfigurationManager.AppSettings["URI_area_form"];
@@ -537,6 +537,8 @@ namespace Kesco.Lib.Web.Settings
 
             equipment_form = ConfigurationManager.AppSettings["URI_Equipment_form"];
 
+            direction_OldVersion = ConfigurationManager.AppSettings["URI_direction_OldVersion"];
+
             delivery_form = ConfigurationManager.AppSettings["URI_delivery_form"];
             delivery_search = ConfigurationManager.AppSettings["URI_delivery_search"];
 
@@ -562,14 +564,14 @@ namespace Kesco.Lib.Web.Settings
         }
 
         /// <summary>
-        /// Получение значения строки подключения из секции connectionStrings файла web.config
+        ///     Получение значения строки подключения из секции connectionStrings файла web.config
         /// </summary>
         /// <param name="DS">Коллекция строк подключения</param>
         /// <param name="id">Идентификтор строки подключения</param>
         /// <returns>Строка подключения</returns>
         private static string CN_Value(ConnectionStringSettingsCollection DS, string id)
         {
-            string ret = "";
+            var ret = "";
 
             if (DS[id] != null)
                 ret = DS[id].ConnectionString;
@@ -580,19 +582,19 @@ namespace Kesco.Lib.Web.Settings
 
 
         /// <summary>
-        /// Проверка наличия значения в файле конфигурации приложения (web.config)
-        /// Значение проверяется в секции appSettings
+        ///     Проверка наличия значения в файле конфигурации приложения (web.config)
+        ///     Значение проверяется в секции appSettings
         /// </summary>
         /// <param name="name">имя параметра</param>
         public static bool ConfigKeyExists(string name)
         {
             var collection = (NameValueCollection) ConfigurationManager.GetSection("appSettings");
-            string res = collection.Get(name);
+            var res = collection.Get(name);
             return res != null;
         }
 
         /// <summary>
-        /// Формирования строки подлючения к SQL-серверу
+        ///     Формирования строки подлючения к SQL-серверу
         /// </summary>
         /// <param name="server">SQL-сервер(название или ip-адрес)</param>
         /// <param name="database">Название базы данных</param>
@@ -601,12 +603,12 @@ namespace Kesco.Lib.Web.Settings
         {
             return
                 string.Format("data source={0};initial catalog={1};integrated security=SSPI;Current Language=Russian;",
-                              server, database);
+                    server, database);
         }
 
 
         /// <summary>
-        /// Преобразование региональных настроек к корпоративному формату
+        ///     Преобразование региональных настроек к корпоративному формату
         /// </summary>
         /// <param name="ci">региональные настройки, подлежащие преобразованию</param>
         /// <returns>преобразованные региональные настройки</returns>
@@ -622,7 +624,7 @@ namespace Kesco.Lib.Web.Settings
                 ConfigurationManager.AppSettings["Culture.Number.GroupSeparator"];
             //corporate.NumberFormat.NumberGroupSizes = ConfigurationManager.AppSettings["Culture.Number.GroupSizes"]);
             corporate.NumberFormat.NumberDecimalDigits =
-                Int32.Parse(ConfigurationManager.AppSettings["Culture.Number.Decimals"]);
+                int.Parse(ConfigurationManager.AppSettings["Culture.Number.Decimals"]);
 
             corporate.NumberFormat.PercentNegativePattern =
                 GetPercentNegativePattern(ConfigurationManager.AppSettings["Culture.Percent.NegativePattern"]);
@@ -634,7 +636,7 @@ namespace Kesco.Lib.Web.Settings
                 ConfigurationManager.AppSettings["Culture.Percent.GroupSeparator"];
             //corporate.NumberFormat.PercentGroupSizes = ConfigurationManager.AppSettings["Culture.Percent.GroupSizes.ToArray<int>(new char[] { ',' }, s => Int32.Parse(s))"];
             corporate.NumberFormat.PercentDecimalDigits =
-                Int32.Parse(ConfigurationManager.AppSettings["Culture.Percent.Decimals"]);
+                int.Parse(ConfigurationManager.AppSettings["Culture.Percent.Decimals"]);
             corporate.NumberFormat.PercentSymbol = ConfigurationManager.AppSettings["Culture.Percent.Symbol"];
 
             corporate.NumberFormat.CurrencyNegativePattern =
@@ -647,7 +649,7 @@ namespace Kesco.Lib.Web.Settings
                 ConfigurationManager.AppSettings["Culture.Currency.GroupSeparator"];
             //corporate.NumberFormat.CurrencyGroupSizes = ConfigurationManager.AppSettings["Culture.Currency.GroupSizes.ToArray<int>(new char[] { ',' }, s => Int32.Parse(s))"];
             corporate.NumberFormat.CurrencyDecimalDigits =
-                Int32.Parse(ConfigurationManager.AppSettings["Culture.Currency.Decimals"]);
+                int.Parse(ConfigurationManager.AppSettings["Culture.Currency.Decimals"]);
             corporate.NumberFormat.CurrencySymbol = ConfigurationManager.AppSettings["Culture.Currency.Symbol"];
 
             corporate.DateTimeFormat.DateSeparator =
@@ -672,13 +674,13 @@ namespace Kesco.Lib.Web.Settings
         }
 
         /// <summary>
-        /// Получение корпоративного формата отображения чисел
+        ///     Получение корпоративного формата отображения чисел
         /// </summary>
         /// <param name="negativePattern">Значение шаблона из конфигурационного файла</param>
         /// <returns>Идентификатор шаблона</returns>
         public static int GetNumberNegativePattern(string negativePattern)
         {
-            int pattern = 1;
+            var pattern = 1;
             switch (negativePattern)
             {
                 case "(n)":
@@ -697,17 +699,18 @@ namespace Kesco.Lib.Web.Settings
                     pattern = 4;
                     break;
             }
+
             return pattern;
         }
 
         /// <summary>
-        /// Получение корпоративного формата отображения процентов с положительным числом
+        ///     Получение корпоративного формата отображения процентов с положительным числом
         /// </summary>
         /// <param name="negativePattern">Значение шаблона из конфигурационного файла</param>
         /// <returns>Идентификатор шаблона</returns>
         public static int GetPercentPositivePattern(string negativePattern)
         {
-            int pattern = -1;
+            var pattern = -1;
             switch (negativePattern)
             {
                 case "n %":
@@ -723,17 +726,18 @@ namespace Kesco.Lib.Web.Settings
                     pattern = 3;
                     break;
             }
+
             return pattern;
         }
 
         /// <summary>
-        /// Получение корпоративного формата отображения процентов с отрицательным числом
+        ///     Получение корпоративного формата отображения процентов с отрицательным числом
         /// </summary>
         /// <param name="negativePattern">Значение шаблона из конфигурационного файла</param>
         /// <returns>Идентификатор шаблона</returns>
         public static int GetPercentNegativePattern(string negativePattern)
         {
-            int pattern = -1;
+            var pattern = -1;
             switch (negativePattern)
             {
                 case "-n %":
@@ -773,17 +777,18 @@ namespace Kesco.Lib.Web.Settings
                     pattern = 11;
                     break;
             }
+
             return pattern;
         }
 
         /// <summary>
-        /// Получение корпоративного формата отображения денежных симовлов при выводе с положительным числом
+        ///     Получение корпоративного формата отображения денежных симовлов при выводе с положительным числом
         /// </summary>
         /// <param name="negativePattern">Значение шаблона из конфигурационного файла</param>
         /// <returns>Идентификатор шаблона</returns>
         public static int GetCurrencyPositivePattern(string negativePattern)
         {
-            int pattern = -1;
+            var pattern = -1;
             switch (negativePattern)
             {
                 case "$n":
@@ -799,17 +804,18 @@ namespace Kesco.Lib.Web.Settings
                     pattern = 3;
                     break;
             }
+
             return pattern;
         }
 
         /// <summary>
-        /// Получение корпоративного формата отображения денежных симовлов при выводе с отрицательным числом
+        ///     Получение корпоративного формата отображения денежных симовлов при выводе с отрицательным числом
         /// </summary>
         /// <param name="negativePattern">Значение шаблона из конфигурационного файла</param>
         /// <returns>Идентификатор шаблона</returns>
         public static int GetCurrencyNegativePattern(string negativePattern)
         {
-            int pattern = -1;
+            var pattern = -1;
             switch (negativePattern)
             {
                 case "($n)":
@@ -861,6 +867,7 @@ namespace Kesco.Lib.Web.Settings
                     pattern = 15;
                     break;
             }
+
             return pattern;
         }
     }
