@@ -101,6 +101,11 @@ namespace Kesco.Lib.Web.Settings
         public static string DS_errors;
 
         /// <summary>
+        ///     Строка подключения к БД ЗаявкиIT 
+        /// </summary>
+        public static string DS_signalr;
+
+        /// <summary>
         ///     Строка подключения к БД Документы, использовать для получения информации по документам
         /// </summary>
         public static string DS_document;
@@ -482,6 +487,7 @@ namespace Kesco.Lib.Web.Settings
             DS_Buh = CN_Value(DS, "DS_Buh");
             DS_accounting_phone = CN_Value(DS, "DS_accounting_phone");
             DS_errors = CN_Value(DS, "DS_errors");
+            DS_signalr = CN_Value(DS, "DS_signalr");
 
             territory_search = ConfigurationManager.AppSettings["URI_area_search"];
             territory_form = ConfigurationManager.AppSettings["URI_area_form"];
