@@ -21,9 +21,19 @@ namespace Kesco.Lib.Web.Settings
         public const string langEn = "en";
 
         /// <summary>
-        ///     Получает текущую версию скриптов из web.config
+        /// Путь к папке JS
         /// </summary>
-        public static string versionV4js;
+        public static string styles_js;
+        /// <summary>
+        /// Путь к папке CSS
+        /// </summary>
+        public static string styles_css;
+
+        /// <summary>
+        /// Параметр для сброса кэша
+        /// </summary>
+        public static string styles_cache;
+
 
         /// <summary>
         ///     SMTP-сервер, через который отправляет сообщения об исключительных ситуациях Kesco.Lib.Log
@@ -132,6 +142,12 @@ namespace Kesco.Lib.Web.Settings
         public static string DS_accounting_phone;
 
         /// <summary>
+        ///     Строка подключения к БД Тарификация, использовать для получения информации по тарификации интернета в самолете
+        ///     связи
+        /// </summary>
+        public static string DS_accounting_jet;
+
+        /// <summary>
         ///     HTTP-адрес формы поиска лиц
         /// </summary>
         public static string person_search;
@@ -227,6 +243,17 @@ namespace Kesco.Lib.Web.Settings
         /// </summary>
         public static string user_form;
 
+
+        /// <summary>
+        ///     HTTP-адрес хендлера для сохранения размера формы
+        /// </summary>
+        public static string settings_form_location;
+
+        /// <summary>
+        ///     HTTP-адрес хендлера для сохранения размера формы
+        /// </summary>
+        public static string settings_form_location_adv;
+
         /// <summary>
         ///     HTTP-адрес формы замещения сотрудника
         /// </summary>
@@ -313,11 +340,15 @@ namespace Kesco.Lib.Web.Settings
         public static string area_srv;
 
         /// <summary>
+        ///     HTTP-адрес формы поиска оборудования
+        /// </summary>
+        public static string equipment_search;
+
+        /// <summary>
         ///     HTTP-адрес формы редактирования оборудования
         /// </summary>
         public static string equipment_form;
-
-
+        
         /// <summary>
         ///     Текущий домен приложения
         /// </summary>
@@ -358,6 +389,11 @@ namespace Kesco.Lib.Web.Settings
         /// </summary>
         public static string tel_form;
 
+        /// <summary>
+        ///     HTTP-адрес формы локальной сети
+        /// </summary>
+        public static string net_form;
+        
         /// <summary>
         ///     HTTP-адрес формы поиска расположений
         /// </summary>
@@ -410,6 +446,11 @@ namespace Kesco.Lib.Web.Settings
         public static string setting_srv;
 
         /// <summary>
+        ///     HTTP-адрес приложения контакты phones.aspx
+        /// </summary>
+        public static string phones;
+
+        /// <summary>
         ///     HTTP-адрес приложения контакты
         /// </summary>
         public static string contacts;
@@ -441,19 +482,41 @@ namespace Kesco.Lib.Web.Settings
         public static string person_link_form_v4;
 
         /// <summary>
+        ///     HTTP-адрес формы поиска пулов IP-Телефонов
+        /// </summary>
+        public static string pool_search;
+
+        /// <summary>
+        ///     HTTP-адрес формы загрузки шаблонов IP-Телефонов
+        /// </summary>
+        public static string voip_template_upload;
+
+        /// <summary>
+        /// </summary>
+        public static string filterClause;
+        
+        /// <summary>
         ///     статический конструктор, в котором инициализируются все переменные
         /// </summary>
         static Config()
         {
-            //person_requsites_v4 = ConfigurationManager.AppSettings["URI_person_requsites_v4"];
-            //person_natural_v4 = ConfigurationManager.AppSettings["URI_person_natural_v4"];
-            //person_juridical_v4 = ConfigurationManager.AppSettings["URI_person_juridical_v4"];
-            //person_contact_form_v4 = ConfigurationManager.AppSettings["URI_person_contact_form_v4"];
-            //person_link_form_v4 = ConfigurationManager.AppSettings["URI_person_link_form_v4"];
 
-            versionV4js = (ConfigurationManager.AppSettings["Version_V4_JS"] ?? "").Length > 0
-                ? "/" + ConfigurationManager.AppSettings["Version_V4_JS"]
+            styles_js = (ConfigurationManager.AppSettings["URI_Styles_js"] ?? "").Length > 0
+                ? ConfigurationManager.AppSettings["URI_Styles_js"]
                 : "";
+
+            styles_css = (ConfigurationManager.AppSettings["URI_Styles_css"] ?? "").Length > 0
+                ? ConfigurationManager.AppSettings["URI_Styles_css"]
+                : "";
+
+            styles_cache = (ConfigurationManager.AppSettings["URI_Styles_cache"] ?? "").Length > 0
+                ? ConfigurationManager.AppSettings["URI_Styles_cache"]
+                : "";
+
+
+            settings_form_location = ConfigurationManager.AppSettings["URI_settings_form_location"];
+            settings_form_location_adv = ConfigurationManager.AppSettings["URI_settings_form_location_adv"];
+
 
             person_contact_form_v4 = ConfigurationManager.AppSettings["URI_person_contact"];
 
@@ -463,9 +526,10 @@ namespace Kesco.Lib.Web.Settings
 
             version_1s_buh = ConfigurationManager.AppSettings["Version_1S_Buh"];
 
+            phones = ConfigurationManager.AppSettings["URI_phones"];
             contacts = ConfigurationManager.AppSettings["URI_contacts"];
             contacts_caller = ConfigurationManager.AppSettings["URI_contacts_caller"];
-            ;
+            
 
             email_Support = ConfigurationManager.AppSettings["Email_Support"];
             smtpServer = ConfigurationManager.AppSettings["SmtpServer"];
@@ -486,6 +550,8 @@ namespace Kesco.Lib.Web.Settings
             DS_resource = CN_Value(DS, "DS_resource");
             DS_Buh = CN_Value(DS, "DS_Buh");
             DS_accounting_phone = CN_Value(DS, "DS_accounting_phone");
+            DS_accounting_jet = CN_Value(DS, "DS_accounting_jet");
+
             DS_errors = CN_Value(DS, "DS_errors");
             DS_signalr = CN_Value(DS, "DS_signalr");
 
@@ -534,6 +600,7 @@ namespace Kesco.Lib.Web.Settings
             tel_form = ConfigurationManager.AppSettings["URI_tel_form"];
             model_search = ConfigurationManager.AppSettings["URI_model_search"];
             model_form = ConfigurationManager.AppSettings["URI_model_form"];
+            net_form = ConfigurationManager.AppSettings["URI_net_form"];
 
             business_project_search = ConfigurationManager.AppSettings["URI_bproject_search"];
             bproject_srv = ConfigurationManager.AppSettings["URI_bproject_srv"];
@@ -541,8 +608,10 @@ namespace Kesco.Lib.Web.Settings
             area_search = ConfigurationManager.AppSettings["URI_area_search"];
             area_srv = ConfigurationManager.AppSettings["URI_area_srv"];
 
+            equipment_search = ConfigurationManager.AppSettings["URI_Equipment_search"];
             equipment_form = ConfigurationManager.AppSettings["URI_Equipment_form"];
 
+            
             direction_OldVersion = ConfigurationManager.AppSettings["URI_direction_OldVersion"];
 
             delivery_form = ConfigurationManager.AppSettings["URI_delivery_form"];
@@ -567,6 +636,12 @@ namespace Kesco.Lib.Web.Settings
 
             role_form = ConfigurationManager.AppSettings["URI_role_form"];
             roles_search = ConfigurationManager.AppSettings["URI_roles_search"];
+
+            pool_search = ConfigurationManager.AppSettings["URI_voip_pool_search"];
+
+            voip_template_upload = ConfigurationManager.AppSettings["URI_voip_template_upload"];
+
+            filterClause = ConfigurationManager.AppSettings["FilterClause"];
         }
 
         /// <summary>
